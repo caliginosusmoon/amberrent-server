@@ -54,6 +54,7 @@ exports.getProductByUser = async (req, res) => {
 	try {
 		const userId = req.params.userId;
 		const products = await Product.find({ userId });
+		console.log("userid is", userId, products);
 		res.status(200).json(products);
 	} catch (error) {
 		res.status(400).json({ error: error.message });
